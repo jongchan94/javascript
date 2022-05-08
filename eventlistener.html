@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>alert 박스</title>
-    <link rel="stylesheet" href="main2.css">
+    <link rel="stylesheet" href="main3.css">
 </head>
 <body>
      
     <div id="alert-box" class="alert"> 
-        <button onclick = "alert('none')">닫기</button>
+        <button id="close">닫기</button>
        <p id="title"> 알림창임</p>
     </div>
 
@@ -24,52 +24,24 @@
  -->
 
 <script>
-    
-    function 아이디알림창(){
+
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert-box').style.display = 'none';
+        });
+ 
+
+
+
+        function 아이디알림창(){
         document.getElementById('title').innerHTML = '아이디를 입력하세요';
         document.getElementById('alert-box').style.display = "block";
     } 
 
 
-    function 비번알림창(){
+        function 비번알림창(){
         document.getElementById('title').innerHTML = '비번을 입력하세요';
         document.getElementById('alert-box').style.display = "block";
     } 
-
-    //내가 한거
-    /*
-    function alert(a){
-        document.getElementById('alert-box').style.display = (a);
-    }
-
-    function buttonClick(form){
-
-        document.getElementById('alert-box').innerHTML = form;
-
-    }
-    */
-
-
-
-    // function alert(){
-    //     document.getElementById('alert-box').style.display ('');
-    // }
-
-
-    
-    // function alert(a){
-    //     document.getElementById('alert-box').style.display = ('a');
-    // }
-    
-
-    // function alertOpen(){
-    //     document.getElementById('alert-box').style.display = ('block')
-    // }
-
-    
-
-
-
     // function alertClose(){
     //     document.getElementById('alert-box').style.display = ('none')
     // }
