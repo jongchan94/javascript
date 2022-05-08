@@ -10,16 +10,22 @@
 <body>
      
     <div id="alert-box" class="alert"> 
-        <button onclick = "document.getElementById('alert-box').style.display= ('none')">닫기</button>
+        <button onclick = "alertClose()">닫기</button>
         알림창임
     </div>
 
-    <button onclick = "document.getElementById('alert-box').style.display =('block')">버튼</button>
+    <button onclick = "alertOpen()">버튼</button>
 
 
 <script>
     
+    function alertOpen(){
+        document.getElementById('alert-box').style.display = ('block')
+    }
 
+    function alertClose(){
+        document.getElementById('alert-box').style.display = ('none')
+    }
 </script>
 </body>
 </html>
