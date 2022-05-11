@@ -1,4 +1,4 @@
-#alert-box{
+#alert{
     background-color: skyblue;
     padding: 20px;
     color: white;
@@ -6,3 +6,11 @@
     display: none;
 }
 
+.list-group{
+    display: none;
+}
+
+
+.show{
+    display: block;
+}
