@@ -22,7 +22,7 @@
                 <input type="text" class="form-control" id="email">
                 </div>
                 <div class="my-3">
-                <input type="password" class="form-control">
+                <input type="password" class="form-control" id="password">
                 </div>
                 <button type="submit" class="btn btn-primary btnIf">전송</button>
                 <button tyoe="button" class="btn btn-danger" id="close">닫기</button>
@@ -116,17 +116,50 @@
             // }
 
 
+            if (1 == 3){
+                console.log('맞아요');
+            }
+            else if (3 == 3){
+                console.log('맞아요2');
+            }
+
+
+            if (1 == 3){
+                console.log('맞아요');
+            }
+
+            if (1 == 3){
+                console.log('맞아요');
+            }
+            // 
+
+
+
             //  이메일을 입력하면 나오는 값
              // document.getElementById('email').value
-            $('form').on('submit', function(){
-                
-                if(document.getElementById('email').value == ''){
-                    alert('안녕하세요');
 
+            // var email = document.getElementById('email').value
+            // var password = document.getElementById('password').value
+
+            $('form').on('submit', function(e){
+                
+                if( document.getElementById('email').value == ''){
+                    alert('안녕하세요');
+                    e.preventDefault();
                 }
 
+                else if( document.getElementById('password').value == ''){
+                    alert('안녕하세요');
+                    e.preventDefault();
+                }
 
+                else if( document.getElementById('password').value.length <= 6 ){
+                    alert('안녕하세요22');
+                    e.preventDefault();
+                }
             });
+
+
     </script>
 
 
