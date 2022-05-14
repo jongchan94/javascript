@@ -19,12 +19,12 @@
 
             <form action="success.html">
                 <div class="my-3">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" id="email">
                 </div>
                 <div class="my-3">
                 <input type="password" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-primary">전송</button>
+                <button type="submit" class="btn btn-primary btnIf">전송</button>
                 <button tyoe="button" class="btn btn-danger" id="close">닫기</button>
                 
             </form> 
@@ -62,17 +62,6 @@
     <script>
 
 
-        //  전송 버든 누르면 
-        //  저기 인풋에 입력한 값이 공백이면 알림창 띄우기
-        // if (조건){
-        //     실행할코드~~
-
-        // }
-        
-            // alert('안녕하세요');
-
-
-
 
 
 
@@ -108,6 +97,36 @@
 
 
 
+        //  전송 버든 누르면 
+        //  저기 인풋에 입력한 값이 공백이면 알림창 띄우기
+        // if (조건){
+        //     실행할코드~~
+
+        // }
+            //폼 전송시 submint 이벤트가 발생함
+            //1.'click' , 말고 'submint' 해도 됌
+            // alert('안녕하세요');
+            
+            // var blank = /^\s+|\s+$/g;
+            // if(blank,'' == ""){
+            //     document.querySelectorAll('.btnIf')[0].addEventListener('click', function(){
+            //         alert('안녕하세요');
+
+            //     });
+            // }
+
+
+            //  이메일을 입력하면 나오는 값
+             // document.getElementById('email').value
+            $('form').on('submit', function(){
+                
+                if(document.getElementById('email').value == ''){
+                    alert('안녕하세요');
+
+                }
+
+
+            });
     </script>
 
 
