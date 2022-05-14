@@ -13,12 +13,16 @@
   </head>
   <body>
 
-    <div class="black-bg">
+    <div class="black-bg show-modal">
       <div class="white-bg">
         <h4>로그인하세요</h4>
         <button class="btn btn-danger" id="close">닫기</button>
       </div>
     </div> 
+
+    
+
+
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -55,10 +59,11 @@
 
         // 자바스크립트 모달창 
          document.querySelectorAll('.navbar-toggler')[0].addEventListener('click',function(){
-          document.querySelectorAll('.black-bg')[0].style.display = 'block'
+          document.querySelectorAll('.black-bg')[0].style.display = 'block';
 
         });
         
+        //jQuery
         // $('.navbar-toggler').on('click', function(){
         //   $('.black-bg').css('display', 'block');
 
