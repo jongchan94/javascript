@@ -116,6 +116,8 @@
             // }
 
 
+
+
             if (1 == 3){
                 console.log('맞아요');
             }
@@ -141,23 +143,37 @@
             // var email = document.getElementById('email').value
             // var password = document.getElementById('password').value
 
-            $('form').on('submit', function(e){
+            // $('form').on('submit', function(e){
                 
-                if( document.getElementById('email').value == ''){
-                    alert('안녕하세요');
-                    e.preventDefault();
-                }
+            //     if( document.getElementById('email').value == ''){
+            //         alert('안녕하세요');
+            //         e.preventDefault();
+            //     }
 
-                else if( document.getElementById('password').value == ''){
-                    alert('안녕하세요');
-                    e.preventDefault();
-                }
+            //     else if( document.getElementById('password').value == ''){
+            //         alert('안녕하세요');
+            //         e.preventDefault();
+            //     }
 
-                else if( document.getElementById('password').value.length <= 6 ){
-                    alert('안녕하세요22');
-                    e.preventDefault();
-                }
+            //     else if( document.getElementById('password').value.length <= 6 ){
+            //         alert('안녕하세요22');
+            //         e.preventDefault();
+            //     }
+            // });
+
+
+            $('form').on('submit',function(e){
+              //전송을 누를 시에
+            var 입력한값 = document.getElementById('email').value;
+              //이메일에 입력한 값이
+
+            if ( /\S+@\S+\.\S+/.test(입력한값) !== /[A-Z]/.test(입력한값) ){
+              alert('이메일형식아님')
+              e.preventDefault();
+            }
+
             });
+
 
             //addEventListener('input' 'change'
             //<input> 태그 안에서만 일어나는 input 이벤트
