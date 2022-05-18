@@ -1,0 +1,34 @@
+#alert{
+    background-color: skyblue;
+    padding: 20px;
+    color: white;
+    border-radius: 2px;
+    display: none;
+}
+
+.list-group{
+    display: none;
+}
+
+
+.show{
+    display: block;
+}
+
+.slide-container{
+    width: 300vw;
+    /* transform: translateX(-100vw); */
+    transition: all 1s; 
+}
+
+.slide-box{
+    width: 100vw;
+    float: left;
+
+}
+
+.slide-box img {
+    width: 100%;
+}
+
+
