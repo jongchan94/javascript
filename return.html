@@ -91,16 +91,28 @@
       //하지만 확실히 하고 싶으면 문법을 추가해야함
       // () 처리하고.toFixed(몇번째까지 보여주나)
       // 하지만 toFixed()쓰면 문자열로 반환(자바스크립트 특성)되기 때문에 따로 숫자 처리를 해야한다 (오류 방지)
-      // 
-      console.log(vat(40000));
+      // parseFloat(변수),parseint(변수)를 써야 한다.
+       console.log(vat(40000));
 
       function vat(a){
         var num = (a * 0.2).toFixed(2);
         return parseFloat(num);
-
-
-        
 }
+
+      // 1. 함수로 자료변환기 제작가능
+      // 2. 숫자연산시 주의점
+
+      // 함수에 분과 초를 차례로 파라미터로 입력하면 ms 단위로 바꿔서 뱉어주는 함수
+      // 1초가 1000ms 60초가 1분 60000ms
+      
+      function time(c,d){
+        var ms = (c * 60 + d) * 1000;
+        return ms;
+        
+      }
+      console.log(time(1,30));
+
+      console.log(1*1000);;
     </script>
   </body>
 </html>
