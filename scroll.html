@@ -66,7 +66,12 @@
     <script>
         //유저가 스크롤바에따라 반응하게 하보장
         //일단 이벤트리스너가 1개 필요함
-        
+        // 페이지가 스크롤 될 때 안에 있는 코드 실행
+        window.addEventListener('scroll' , function(){
+             
+            console.log(window.scrollY);
+
+        });
     </script>
   </body>
 </html>
