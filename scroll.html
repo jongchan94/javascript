@@ -67,11 +67,38 @@
         //유저가 스크롤바에따라 반응하게 하보장
         //일단 이벤트리스너가 1개 필요함
         // 페이지가 스크롤 될 때 안에 있는 코드 실행
+        // scrollTo(x,y); 강제로 스크롤하기
+        // scrollBy(x,y); 현재위치에서 위치로 강제 스크롤
+    
+        //100정도 내려가면 폰트사이즈 작게
+         
+        
+
+
         window.addEventListener('scroll' , function(){
              
-            console.log(window.scrollY);
+          const scrollY = window.scrollY;
 
+            if(scrollY >= 100 ){
+              document.querySelectorAll('.navbar-brand')[0].classList.add('TopFont');
+            };
+
+            // else{
+            //   document.querySelectorAll('.navbar-brand')[0].classList.add('TopFont2');
+            // }
+      
         });
+
+
+        
+        //제이쿼리
+        //$(window).scrollTop() 현재 스크롤바 위치 출력
+
+        // $(window).on('scroll', function(){
+          
+        //   console.log($(window).scrollTop())
+
+        // });
     </script>
   </body>
 </html>
