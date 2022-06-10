@@ -91,17 +91,25 @@
 // });
 
 
+// 각각 버튼에 이벤트리스너를 사용하지 않고 쓸수도 있다
+
+// $('.list').click(function(e){
+//     //이벤트버블링 함수 0 내가 누른게 탭 0 과 같으면~ 함수 실행
+//     if(e.target == document.querySelectorAll('.tab-button')[0]){
+//         탭열기(0)
+//     }
+
+//     if(e.target == document.querySelectorAll('.tab-button')[1]){
+//         탭열기(1)
+//     }
+
+//     if(e.target == document.querySelectorAll('.tab-button')[2]){
+//         탭열기(2)
+//     }
+// });
+
 $('.list').click(function(e){
-    //이벤트버블링 함수 0 내가 누른게 탭 0 과 같으면~ 함수 실행
-    if(e.target == document.querySelectorAll('.tab-button')[0]){
-        탭열기(0)
-    }
-
-    if(e.target == document.querySelectorAll('.tab-button')[1]){
-        탭열기(1)
-    }
-
-    if(e.target == document.querySelectorAll('.tab-button')[2]){
-        탭열기(2)
-    }
+    탭열기(e.target.dataset.id)
 });
+
+
