@@ -53,16 +53,30 @@
   // 반복문 안에 있는 변수를 만들 때 항상 let 사용 (범위 차이)
   for (let i = 0; i < 3; i++){
     $('.tab-button').eq(i).on('click', function(){
-    $('.tab-button').removeClass('orange');
-    $('.tab-button').eq(i).addClass('orange');
+        탭열기(i)
 
-    $('.tab-content').removeClass('show');
-    $('.tab-content').eq(i).addClass('show');
+    // $('.tab-button').removeClass('orange');
+    // $('.tab-button').eq(i).addClass('orange');
+
+    // $('.tab-content').removeClass('show');
+    // $('.tab-content').eq(i).addClass('show');
   });
   }
   
-  
+
   const tabList = document.querySelectorAll('.tab-button', '.tab-content');
   // for (let i = 0; i < tabList.length;  i++){
   //확장성 있게 3를 지금 html에 있는 탭 버튼의 갯수를 확인함
 
+
+
+  //함수로 축약하기
+
+  function 탭열기(숫자){
+    //축약할 코드에 변수가 있으면 변수를 파라미터로 바꿔야 잘 작동함 (i)      
+    $('.tab-button').removeClass('orange');
+    $('.tab-button').eq(숫자).addClass('orange');
+
+    $('.tab-content').removeClass('show');
+    $('.tab-content').eq(숫자).addClass('show');
+  }
