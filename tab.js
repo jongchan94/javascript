@@ -51,26 +51,28 @@
 
   // i가 0부터 시작해서 i를 1개씩 더하고 3이 되면 정지
   // 반복문 안에 있는 변수를 만들 때 항상 let 사용 (범위 차이)
-  for (let i = 0; i < 3; i++){
-    $('.tab-button').eq(i).on('click', function(){
-        탭열기(i)
+
+
+//   for (let i = 0; i < 3; i++){
+//     $('.tab-button').eq(i).on('click', function(){
+//         탭열기(i)
 
     // $('.tab-button').removeClass('orange');
     // $('.tab-button').eq(i).addClass('orange');
 
     // $('.tab-content').removeClass('show');
     // $('.tab-content').eq(i).addClass('show');
-  });
-  }
+//   });
+//   }
   
 
-  const tabList = document.querySelectorAll('.tab-button', '.tab-content');
-  // for (let i = 0; i < tabList.length;  i++){
-  //확장성 있게 3를 지금 html에 있는 탭 버튼의 갯수를 확인함
+//   const tabList = document.querySelectorAll('.tab-button', '.tab-content');
+//   // for (let i = 0; i < tabList.length;  i++){
+//   //확장성 있게 3를 지금 html에 있는 탭 버튼의 갯수를 확인함
 
 
 
-  //함수로 축약하기
+//   //함수로 축약하기
 
   function 탭열기(숫자){
     //축약할 코드에 변수가 있으면 변수를 파라미터로 바꿔야 잘 작동함 (i)      
@@ -80,3 +82,26 @@
     $('.tab-content').removeClass('show');
     $('.tab-content').eq(숫자).addClass('show');
   }
+
+
+//이벤트리스너로 탭기능 구현해보기
+
+// document.querySelector('.list').addEventListener('click', function(){
+    
+// });
+
+
+$('.list').click(function(e){
+    //이벤트버블링 함수 0 내가 누른게 탭 0 과 같으면~ 함수 실행
+    if(e.target == document.querySelectorAll('.tab-button')[0]){
+        탭열기(0)
+    }
+
+    if(e.target == document.querySelectorAll('.tab-button')[1]){
+        탭열기(1)
+    }
+
+    if(e.target == document.querySelectorAll('.tab-button')[2]){
+        탭열기(2)
+    }
+});
