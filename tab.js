@@ -50,7 +50,7 @@
 //   }
 
   // i가 0부터 시작해서 i를 1개씩 더하고 3이 되면 정지
-  // 반복문 안에 있는 변수를 만들 때 항상 let 사용
+  // 반복문 안에 있는 변수를 만들 때 항상 let 사용 (범위 차이)
   for (let i = 0; i < 3; i++){
     $('.tab-button').eq(i).on('click', function(){
     $('.tab-button').removeClass('orange');
@@ -60,3 +60,9 @@
     $('.tab-content').eq(i).addClass('show');
   });
   }
+  
+  
+  const tabList = document.querySelectorAll('.tab-button', '.tab-content');
+  // for (let i = 0; i < tabList.length;  i++){
+  //확장성 있게 3를 지금 html에 있는 탭 버튼의 갯수를 확인함
+
