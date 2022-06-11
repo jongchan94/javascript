@@ -58,11 +58,11 @@
       
 
       //object 자료형
-      var car2 = {name : '아반떼' , price : 30000}
+      // var car2 = {name : '아반떼' , price : 30000}
       // console.log(car2);
 
-      car2['name'] = '소나타';
-      console.log(car2['name']);
+      // car2['name'] = '소나타';
+      // console.log(car2['name']);
       
       // 기능은 같으나 이름 붙여서 저장하는게 장점
       // name (key) : price : (value)
@@ -73,6 +73,12 @@
       //object : 순서개념이 없다 많은걸 사용할땐 이름을 저장하는 obj가 유용
 
       
-      document.querySelector('.id').innerHTML = car2['name'];
-      document.querySelector('.price').innerHTML = car2['price'];
+      // document.querySelector('.id').innerHTML = car2['name'];
+      // document.querySelector('.price').innerHTML = car2['price'];
+
+
+      var car2 = {name : '아반떼' , price : [50000 , 3000, 4000]}
+      document.querySelector('.price').innerHTML = car2['price'][2];
+      // console.log(car2['price'][1])
+
     </script>
