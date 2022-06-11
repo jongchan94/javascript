@@ -13,32 +13,33 @@
   </head>
   <body>
       
-    <div class="container mt-3">
-      <div class="card p-3">
-        <span class="id"> 상품명 </span>
-        <span class="price">가격</span>
+    <div class="card-group container">
+      <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+          <h5 class="name">Card title</h5>
+          <p class="price">가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+          <h5 class="name">Card title</h5>
+          <p class="price">가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600">
+        <div class="card-body">
+          <h5 class="name">Card title</h5>
+          <p class="price"> 가격 : 70000</p>
+          <button class="btn btn-danger">주문하기</button>
+        </div>
       </div>
     </div>
 
-
-    <div class="container mt-5">
-        <ul class="list"> 
-          <li class="tab-button" data-id="0">Products</li>
-          <li class="tab-button orange" data-id="1">Information</li>
-          <li class="tab-button" data-id="2">Shipping</li>
-        </ul>
-
-
-        <div class="tab-content">
-          <p>상품설명입니다. Product</p>
-        </div>
-        <div class="tab-content show">
-          <p>스펙설명입니다. Information</p>
-        </div>
-        <div class="tab-content">
-          <p>배송정보입니다. Shipping</p>
-        </div>
-      </div> 
 
       
   </body>
@@ -47,42 +48,22 @@
 
     <script>
 
-      //array 
+    var products = [
+        { id : 0, price : 70000, title : 'Blossom Dress' },
+        { id : 1, price : 50000, title : 'Springfield Shirt' },
+        { id : 2, price : 60000, title : 'Black Monastery' }
+      ];
 
-      var car = ['소나타', 50000, 'white'];
-      // car[0] = '아반떼';
-      // car[3] = '색상';
-      // console.log(car);
-      console.log(car[1]);
+      //Array 안에 Object
+      console.log(products[0].title);
+
+
+      // document.querySelectorAll('.name')[0].innerHTML = products[0].title
       
+      for(let i = 0; i < 3; i++){
+        document.querySelectorAll('.name')[i].innerHTML = products[i].title;
+        document.querySelectorAll('.price')[i].innerHTML = products[i].price;
+        
+      }
 
-      //object 자료형
-      // var car2 = {name : '아반떼' , price : 30000}
-      // console.log(car2);
-
-      // car2['name'] = '소나타';
-      // console.log(car2['name']);
-      
-      // 기능은 같으나 이름 붙여서 저장하는게 장점
-      // name (key) : price : (value)
-
-
-      //가장 큰 차이점 
-      //array : 자료간 순서가 존재함 , 자료간 정렬도 가능 , 중간에 자르기도 가능
-      //object : 순서개념이 없다 많은걸 사용할땐 이름을 저장하는 obj가 유용
-
-      
-      // document.querySelector('.id').innerHTML = car2['name'];
-      // document.querySelector('.price').innerHTML = car2['price'];
-
-
-
-      var car2 = {name : '아반떼' , price : [50000 , 3000, 4000]}
-      document.querySelector('.price').innerHTML = car2['price'][2];
-
-      //복잡하게 생긴 arrat,object 자료 다룰 땐 출력해보고 시작기호도 확인 하면 쉬움
-      //{obj},[array]
-      // console.log(car2['price'][1])
-      
-      //데이터바인딩 (html에 꽂아넣기);
     </script>
