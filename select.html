@@ -46,11 +46,18 @@
             // javascript에서 입력값
             console.log(document.querySelectorAll('.form-select')[0].value);
             
+
+            
         // var user = document.querySelectorAll('.shikt');
         // var size = document.querySelectorAll('.size');
         // if (user == size){
         //     document.querySelectorAll('.size')[0].classList.add('show2')
         // }
 
-        
+            var user = document.querySelectorAll('.form-select')[0].value;
+            // var size = document.querySelectorAll('.form-select')[1];
+
+            if (user == '셔츠'){
+                document.querySelectorAll('.form-select')[1].classList.add('show');
+            };
     </script> 
