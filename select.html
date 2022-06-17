@@ -44,20 +44,39 @@
 
             
             // javascript에서 입력값
-            console.log(document.querySelectorAll('.form-select')[0].value);
+            // console.log(document.querySelectorAll('.form-select')[0].value);
             
 
             
-        // var user = document.querySelectorAll('.shikt');
-        // var size = document.querySelectorAll('.size');
-        // if (user == size){
-        //     document.querySelectorAll('.size')[0].classList.add('show2')
-        // }
+            // // var user = document.querySelectorAll('.shikt');
+            // // var size = document.querySelectorAll('.size');
+            // // if (user == size){
+            // //     document.querySelectorAll('.size')[0].classList.add('show2')
+            // // }
 
-            var user = document.querySelectorAll('.form-select')[0].value;
-            // var size = document.querySelectorAll('.form-select')[1];
+            // var user = document.querySelectorAll('.form-select')[0].value;
+            // // var size = document.querySelectorAll('.form-select')[1];
 
-            if (user == '셔츠'){
+            // if (user == '셔츠'){
+            //     document.querySelectorAll('.form-select')[1].classList.add('show');
+            // };
+
+            // 아무런 반응이 없다 
+            // <script> 안에 적은 코드는 페이지 로드시 1회만 실행됌
+            // 유저가 바꿧다고해서 자동으로실행이안됌
+            
+            //유저가 선택할 때 마다 코드 실행을 해야 함
+
+            document.querySelectorAll('.form-select')[0].addEventListener('input' , function(){
+
+                var user = document.querySelectorAll('.form-select')[0].value;
+
+
+                if (user == '셔츠'){
                 document.querySelectorAll('.form-select')[1].classList.add('show');
-            };
+                };
+                
+            });
+
+            //input은 값 변경 할때마다 input 이벤트 발동
     </script> 
