@@ -40,3 +40,7 @@ ul.list::after {
 .show{
   display: block;
 }
+
+.pant{
+  display: none;
+}
