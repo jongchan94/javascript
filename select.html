@@ -18,6 +18,7 @@
         <select class="form-select mt-2 item">
           <option class="hat">모자</option>
           <option class="shikt">셔츠</option>
+          <option>바지</option>
         </select>
 
         <select class="form-select mt-2 size">
@@ -92,4 +93,15 @@
            var a =  document.createElement('p');
            a.innerHTML = '안녕';   
            document.querySelector('#test').appendChild(a);
+          // 길고 복잡
+
+          //생성법2 
+            var 템플릿 = '<p>안녕</p>';
+            document.querySelector('#test').insertAdjacentHTML('beforeend', 템플릿);
+            $('#test').append(템플릿);
+            //div태그안에 html추가해주세요
+            //추가 안하고 바꾸고 싶다 하면 innerHTML
+
+        
+
             </script> 
