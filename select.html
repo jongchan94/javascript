@@ -27,8 +27,6 @@
             <option class="size3">100</option>
           </select>
 
-          <select class="form-select mt-2 pant">
-          </select>
     </form>
 
       <!-- select  -->
@@ -75,30 +73,29 @@
             //유저가 선택할 때 마다 코드 실행을 해야 함
 
 
-            var pantSize = '<option>28</option>';
-            var pantSize1 = '<option>30</option>';
-            
-            document.querySelector('.pant').insertAdjacentHTML('beforeend', pantSize);
-            document.querySelector('.pant').insertAdjacentHTML('beforeend', pantSize1);
-
+          
 
             document.querySelectorAll('.form-select')[0].addEventListener('input' , function(){
 
                 var user = document.querySelectorAll('.form-select')[0].value;
-                console.log(user);
+                // console.log(user);
 
                 if (user == '셔츠'){
                 document.querySelectorAll('.form-select')[1].classList.add('show');
+              
                 };
                 
-                
-                if (user =='바지'){
-                document.querySelectorAll('form-select')[2].classList.add('show2');
+                var pantSize = `<option>28</option> <option>30</option>`;
+              
+                if(user == '바지'){
+                  document.querySelectorAll('.form-select')[1].classList.add('show');
+                  document.querySelectorAll('.form-select')[1].innerHTML = '';
+                  document.querySelectorAll('.form-select')[1].insertAdjacentHTML('beforeend', pantSize)
 
                 };
-
             });
 
+            
                 
             //input은 값 변경 할때마다 input 이벤트 발동
             // this 나 e 활용
