@@ -74,15 +74,29 @@
             
             //유저가 선택할 때 마다 코드 실행을 해야 함
 
+
+            var pantSize = '<option>28</option>';
+            var pantSize1 = '<option>30</option>';
+            
+            document.querySelector('.pant').insertAdjacentHTML('beforeend', pantSize);
+            document.querySelector('.pant').insertAdjacentHTML('beforeend', pantSize1);
+
+
             document.querySelectorAll('.form-select')[0].addEventListener('input' , function(){
 
                 var user = document.querySelectorAll('.form-select')[0].value;
-
+                console.log(user);
 
                 if (user == '셔츠'){
                 document.querySelectorAll('.form-select')[1].classList.add('show');
                 };
                 
+                
+                if (user =='바지'){
+                document.querySelectorAll('form-select')[2].classList.add('show2');
+
+                };
+
             });
 
                 
@@ -105,8 +119,5 @@
             //div태그안에 html추가해주세요
             //추가 안하고 바꾸고 싶다 하면 innerHTML
 
-            
-
-            
 
             </script> 
