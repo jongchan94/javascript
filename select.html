@@ -73,6 +73,7 @@
             //유저가 선택할 때 마다 코드 실행을 해야 함
 
               var pants = [28,30,32];
+              var shirts = [95, 100, 105];
           
 
             document.querySelectorAll('.form-select')[0].addEventListener('input' , function(){
@@ -82,7 +83,12 @@
 
                 if (user == '셔츠'){
                 document.querySelectorAll('.form-select')[1].classList.add('show');
-              
+
+               
+                  shirts.forEach(function(dete){
+                    // console.log(5);
+                    $('.form-select').eq(1).append(`<option> ${dete} </option>`);
+                  });
                 };
                 
                 var pantSize = `<option>28</option> <option>30</option>`;
@@ -103,11 +109,22 @@
                   pants.forEach(function(a){
                     console.log(a);
                     $('.form-select').eq(1).append(`<option> ${a} </option>`);
+
                   });
                 };
             });
 
            
+            //opject 자료 갯수만큼 반복문 돌리려면
+
+
+            var obj = {name :'kim', age : 20}
+            //key 값은 자료이름 즉 {name , age}
+              for (var key in obj){
+                console.log(obj[key]);
+              }
+            
+        
                 
             //input은 값 변경 할때마다 input 이벤트 발동
             // this 나 e 활용
