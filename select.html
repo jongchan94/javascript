@@ -72,7 +72,7 @@
             
             //유저가 선택할 때 마다 코드 실행을 해야 함
 
-              var pants = [28,30, 32];
+              var pants = [28,30,32];
           
 
             document.querySelectorAll('.form-select')[0].addEventListener('input' , function(){
@@ -91,11 +91,23 @@
                   document.querySelectorAll('.form-select')[1].classList.add('show');
                   document.querySelectorAll('.form-select')[1].innerHTML = '';
                   document.querySelectorAll('.form-select')[1].insertAdjacentHTML('beforeend', pantSize)
-                  for (var i = 0; i < pants.length; i++){};
+              
+                  //option태그 생성해주세요
+                  //array에 붙일 수 있는 반복문
+                  //a는 콜백함수 array에있던 데이터들
+                  // pants.forEach(function(a){
+                  //   // console.log(123);
+                  //   document.querySelectorAll('.form-select')[1].appendChild(`<option>${a}</option>`);
+                  // });
+
+                  pants.forEach(function(a){
+                    console.log(a);
+                    $('.form-select').eq(1).append(`<option> ${a} </option>`);
+                  });
                 };
             });
 
-            
+           
                 
             //input은 값 변경 할때마다 input 이벤트 발동
             // this 나 e 활용
