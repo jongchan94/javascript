@@ -16,12 +16,12 @@
     <div class="container">
       <div class="row">
     
-          <div class="col-sm-4">
+          <!-- <div class="col-sm-4">
             <img src="https://via.placeholder.com/600" class="w-100">
             <h5>Card title</h5>
             <p>가격 : 70000</p>
           </div>
-    
+        -->
       </div>
     </div> 
 
@@ -49,5 +49,70 @@
         
       // }
 
+      
+      //   var 템플릿 = 
+      //   `   <div class="col-sm-4">
+      //       <img src="https://via.placeholder.com/600" class="w-100">
+      //       <h5>${products[0].title}</h5>
+      //       <p>가격 : ${products[0].price}</p>
+      //     </div>
+      //  `
+      //  document.querySelectorAll('.row')[0].append(템플릿);
+      // $('.row').append(템플릿);
+      
+
+      //반복문 
+      products.forEach(function(a){
+
+        var 템플릿 = 
+        `   <div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+          </div>`;
+       $('.row').append(템플릿); 
+      
+      });
 
     </script> 
+
+  <div class="container">
+  <button class="btn btn-danger">더보기</button>
+  </div>  
+
+  <script>
+
+
+
+
+    $('.btn').click(function(){
+      $.get('https://codingapple1.github.io/js/more1.json')
+      .done(function(data){
+        console.log(data);
+        
+  
+        // ` <div class="col-sm-4">
+        //     <img src="https://via.placeholder.com/600" class="w-100">
+        //     <h5>${data[0].title}</h5>
+        //     <p>가격 : ${data[0].price}</p>
+        //   </div>`;
+        
+        data.forEach(function(a){
+          var 템플릿 = 
+          `   <div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+            </div>`;
+          $('.row').append(템플릿); 
+
+          });
+
+
+      });
+
+    });
+
+
+
+  </script>
