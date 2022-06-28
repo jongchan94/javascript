@@ -13,35 +13,19 @@
   </head>
   <body>
       
-    <div class="card-group container">
-      <div class="card">
-        <img src="https://via.placeholder.com/600">
-        <div class="card-body">
-          <h5 class="name">Card title</h5>
-          <p class="price">가격 : 70000</p>
-          <button class="btn btn-danger">주문하기</button>
-        </div>
+    <div class="container">
+      <div class="row">
+    
+          <div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>Card title</h5>
+            <p>가격 : 70000</p>
+          </div>
+    
       </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/600">
-        <div class="card-body">
-          <h5 class="name">Card title</h5>
-          <p class="price">가격 : 70000</p>
-          <button class="btn btn-danger">주문하기</button>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/600">
-        <div class="card-body">
-          <h5 class="name">Card title</h5>
-          <p class="price"> 가격 : 70000</p>
-          <button class="btn btn-danger">주문하기</button>
-        </div>
-      </div>
-    </div>
+    </div> 
 
 
-      
   </body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="/tab.js"></script>
@@ -55,50 +39,15 @@
       ];
 
       //Array 안에 Object
-      console.log(products[0].title);
-
+      // console.log(products[0].title);
 
       // document.querySelectorAll('.name')[0].innerHTML = products[0].title
       
-      for(let i = 0; i < 3; i++){
-        document.querySelectorAll('.name')[i].innerHTML = products[i].title;
-        document.querySelectorAll('.price')[i].innerHTML = products[i].price;
+      // for(let i = 0; i < 3; i++){
+      //   document.querySelectorAll('.name')[i].innerHTML = products[i].title;
+      //   document.querySelectorAll('.price')[i].innerHTML = products[i].price;
         
-      }
+      // }
 
 
-              // 데이터의 url 기재 해야함
-              // get / post 둘중에 하나 선택
-              // get 데이터 읽을 때
-              // post 데이터 보낼 때
-              
-              // get/post 요청하면 브라우저 새로고침 됌
-              // ajax : 새로고침 없이 get,post 요청하는 기능
-              // ajax로 get 요청하는법
-
-              //get
-              // $.get('https://codingapple1.github.io/hello.txt')
-              // .done(function(data){
-
-              //   console.log(data);
-              // });
-
-              
-              //post
-              // $.post('https://codingapple1.github.io/hello.txt'. {name : 'kim'})
-              // .done(function(data){
-
-              //   console.log(data);
-              // });
-
-              //ajax 실패시 특정 코드 실행
-
-              $.get('https://codingapple1.github.io/hello.txt123123123')
-              .done(function(data){
-
-                console.log(data);
-              })
-              .fail(function(){
-                console.log('실패함');
-              });
     </script> 
