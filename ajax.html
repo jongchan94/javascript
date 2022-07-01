@@ -30,6 +30,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="/tab.js"></script>
 
+
+<!-- 버튼 누르면 데이터 가격순 정렬 -->
+    <div class="container">
+      <button class="btn btn-danger sell">가격순 정렬</button>
+    </div>  
     <script>
 
     var products = [
@@ -37,6 +42,31 @@
         { id : 1, price : 50000, title : 'Springfield Shirt' },
         { id : 2, price : 60000, title : 'Black Monastery' }
       ];
+
+      
+      $('.sell').click(function(){
+
+        products.sort(function(a,b){
+          return a.price - b.price;
+        });
+
+        $('.row').html('');
+
+      //반복문 
+        products.forEach(function(a){
+
+          var 템플릿 = 
+          `   <div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+            </div>`;
+          $('.row').append(템플릿); 
+
+          });
+      
+      });
+      
 
       //Array 안에 Object
       // console.log(products[0].title);
@@ -61,23 +91,25 @@
       // $('.row').append(템플릿);
       
 
-      //반복문 
-      products.forEach(function(a){
 
-        var 템플릿 = 
-        `   <div class="col-sm-4">
-            <img src="https://via.placeholder.com/600" class="w-100">
-            <h5>${a.title}</h5>
-            <p>가격 : ${a.price}</p>
-          </div>`;
-       $('.row').append(템플릿); 
-      
-      });
 
+      // sort()는 원본 변형 o
+      // filter()는 원본 변형 x
 
       var 어레이 = [7,3,5,2,40];
 
+      //자료 원하는것만 필터하려면
+      // filter() 결과는 변수에 저장해서 써야함
+    
+      var 새어레이 = 어레이.filter(function(a){
+        // return 조건식
+        return a < 4
+      });
+      console.log(새어레이);
 
+
+
+    
       //문자정렬
       // 어레이.sort();
       // console.log(어레이);
@@ -105,20 +137,31 @@
       });
 
       console.log(어레이2);
+
+
+
+
+
     </script> 
+
+
+
+
+
+
 
 
 
 <!-- 더보기 -->
   <div class="container">
-  <button class="btn btn-danger">더보기</button>
+  <button class="btn btn-danger click">더보기</button>
   </div>  
 
   <script>
 
     
     //더보기
-    $('.btn').click(function(){
+    $('.click').click(function(){
       $.get('https://codingapple1.github.io/js/more1.json')
       .done(function(data){
         console.log(data);
