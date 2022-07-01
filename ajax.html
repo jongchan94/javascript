@@ -74,17 +74,27 @@
       
       });
 
+
+      var 어레이 = [7,3,5,2,40];
+      어레이.sort();
+      console.log(어레이);
+
+
+
+
     </script> 
 
+
+
+<!-- 더보기 -->
   <div class="container">
   <button class="btn btn-danger">더보기</button>
   </div>  
 
   <script>
 
-
-
-
+    
+    //더보기
     $('.btn').click(function(){
       $.get('https://codingapple1.github.io/js/more1.json')
       .done(function(data){
