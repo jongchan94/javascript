@@ -32,9 +32,42 @@
 
     <!-- 삼풍명 다나가순 -->
     <div class="container">
-      <button class="btn btn-danger idpr">삼풍명다나가순</button>
+      <button class="btn btn-danger idTitle">삼풍명다나가순</button>
     </div>  
 
+    <script>
+      $('.idTitle').click(function(){
+        products.sort(function(a,b){
+          if(a.title < b.title){
+            return 1
+          }
+          else{
+            return -1
+          }
+          
+        });
+        
+
+        $('.row').html('');
+
+        //반복문 
+          products.forEach(function(a){
+
+            var 템플릿 = 
+            `   <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${a.title}</h5>
+                <p>가격 : ${a.price}</p>
+              </div>`;
+            $('.row').append(템플릿); 
+
+            });
+
+
+             });
+              
+    </script>
+    <!-- // -->
 
     <!-- 6만원 이하 상품만보기 -->
 
@@ -42,8 +75,36 @@
       <button class="btn btn-danger descending">6만원 이하</button>
     </div>  
 
+    <script>
+      $('.descending').click(function(){
+       var 가격변동 = products.filter(function(a,b){
+          return a.price <= 60000
+        });
+        console.log(가격변동)
 
-<!-- 버튼 누르면 데이터 가격순 정렬 -->
+
+        $('.row').html(가격변동);
+
+        //반복문 
+          products.forEach(function(a){
+
+            var 템플릿 = 
+            `   <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${a.title}</h5>
+                <p>가격 : ${a.price}</p>
+              </div>`;
+            $('.row').append(템플릿); 
+
+            });
+
+
+      });
+    </script>
+    <!-- // -->
+
+
+  <!-- 버튼 누르면 데이터 가격순 정렬 -->
     <div class="container">
       <button class="btn btn-danger sell">가격순 정렬</button>
     </div>  
@@ -102,6 +163,7 @@
       //  document.querySelectorAll('.row')[0].append(템플릿);
       // $('.row').append(템플릿);
       
+
       //반복문 
       products.forEach(function(a){
 
