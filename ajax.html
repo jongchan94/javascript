@@ -31,7 +31,16 @@
     <script src="/tab.js"></script>
 
     <!-- 삼풍명 다나가순 -->
+    <div class="container">
+      <button class="btn btn-danger idpr">삼풍명다나가순</button>
+    </div>  
+
+
     <!-- 6만원 이하 상품만보기 -->
+
+    <div class="container">
+      <button class="btn btn-danger descending">6만원 이하</button>
+    </div>  
 
 
 <!-- 버튼 누르면 데이터 가격순 정렬 -->
@@ -93,7 +102,18 @@
       //  document.querySelectorAll('.row')[0].append(템플릿);
       // $('.row').append(템플릿);
       
+      //반복문 
+      products.forEach(function(a){
 
+        var 템플릿 = 
+        `   <div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+          </div>`;
+        $('.row').append(템플릿); 
+
+        });
 
 
       // sort()는 원본 변형 o
