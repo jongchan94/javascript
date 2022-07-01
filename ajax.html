@@ -76,12 +76,35 @@
 
 
       var 어레이 = [7,3,5,2,40];
-      어레이.sort();
-      console.log(어레이);
 
 
+      //문자정렬
+      // 어레이.sort();
+      // console.log(어레이);
 
+      //숫자 오름차순 정렬
+      어레이.sort(function(a,b){
+        return a - b;
+      });
 
+      //a,b 는  array 안의 자료이다.
+      //return 오른쪽이 양수면 a를 오른쪽으로
+      //return 오른쪽이 음수면 b를 오른쪽으로
+
+      //다나가순 정렬은?
+      var 어레이2 = ['a','c','b'];
+      어레이2.sort(function(c, d){
+        if (c < d) {
+          return 1
+        }
+
+        else {
+          return -1
+        }
+        
+      });
+
+      console.log(어레이2);
     </script> 
 
 
