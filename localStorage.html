@@ -186,21 +186,32 @@
         //JSON으로 바꾸면 가능
 
         // var arr = [1,2,3];
-        // var neArr = JSON.stringify(arr);
-        // localStorage.getItem('num', neArr);
+        // var newArr = JSON.stringify(arr);
+
+        // localStorage.setItem('num', newArr);
+
+        //꺼내거쓸땐
         // var 꺼낸거 = localStorage.getItem('num');
-        
-        // console.log(JSON.parse(꺼낸거)[0]);
+        // 꺼낸거 = JSON.parse(꺼낸거);
+        // console.log(꺼낸거);
 
         //데이터 수정
         //1.자료꺼냄
         //2.꺼낸거 수정함
         //3.다시넣음
+        //내 형제요소
 
 
+        $('.buy').click(function(){
 
+         
+        var arr = [1,2,3];
+        var newArr = JSON.stringify(arr);
 
+        localStorage.setItem('num', newArr);
+         
 
+        });
 
 
 
