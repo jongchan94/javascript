@@ -221,14 +221,37 @@
 
         });
 
+        // --카드--
 
+
+        // 구매버튼눌렀을 때 스토리지 추가
 
         $('.buy').click(function(e){
          var cartName =  $(e.target).siblings('h5').text();
         //  console.log(cartName);
-         var newName = JSON.stringify([cartName]);
-         localStorage.setItem('cart', newName);
+
+        //만약에 이미 cart라는 항목이 있으면 수정하기~~  근데 그게아니면
+        //getItem으로 키를 가져와서 값이 있나없나 체크
+        if(localStorage.getItem('cart') != null){
+          // getItem으로 데이터 꺼내기
+          var 로컬꺼낸거 = localStorage.getItem('cart')
+          // []형태라 JSon.parse로 다시 바꿔줘야함
+          로컬꺼낸거 = JSON.parse(로컬꺼낸거);
+          //push를 이용해서 뒷 부분에 넣음
+          로컬꺼낸거.push(cartName);
+          // console.log(로컬꺼낸거)
+          
+          localStorage.setItem('cart', JSON.stringify(로컬꺼낸거));
+          
+        }
+
+        else{
+          // var newName = JSON.stringify([cartName]);
+         localStorage.setItem('cart', JSON.stringify([cartName]));
+        }
+
         // localStorage.removeItem('cart')
+
 
         });
 
