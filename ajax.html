@@ -36,6 +36,7 @@
     </div>  
 
     <script>
+
       $('.idTitle').click(function(){
         products.sort(function(a,b){
           if(a.title < b.title){
@@ -46,7 +47,7 @@
           }
           
         });
-        
+        //같은 글자면 0을 리턴
 
         $('.row').html('');
 
@@ -83,10 +84,10 @@
         console.log(가격변동)
 
 
-        $('.row').html(가격변동);
+        $('.row').html('');
 
         //반복문 
-          products.forEach(function(a){
+        가격변동.forEach(function(a){
 
             var 템플릿 = 
             `   <div class="col-sm-4">
