@@ -201,19 +201,9 @@
         //3.다시넣음
         //내 형제요소
 
-
-        $('.buy').click(function(){
-
-         
-        var arr = [1,2,3];
-        var newArr = JSON.stringify(arr);
-
-        localStorage.setItem('num', newArr);
-         
-
-        });
-
-
+        // 1.구매버튼누르면
+        // 2. 지금 누른버튼 윗윗 글자를 가져와서
+        // 3. 로컬스트리지에 [글자] 저장
 
 
 
@@ -232,6 +222,15 @@
         });
 
 
+
+        $('.buy').click(function(e){
+         var cartName =  $(e.target).siblings('h5').text();
+        //  console.log(cartName);
+         var newName = JSON.stringify([cartName]);
+         localStorage.setItem('cart', newName);
+        // localStorage.removeItem('cart')
+
+        });
 
 
       // sort()는 원본 변형 o
