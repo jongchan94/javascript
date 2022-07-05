@@ -1,4 +1,23 @@
-<div>장바구니페이지</div>
-<p>상품명1</p>
-<p>상품명2</p>
-<p>상품명3</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="row">장바구니페이지
+    <p class="name">상품명1</p>
+    <p>상품명2</p>
+    <p>상품명3</p>
+    </div>
+
+</body>
+
+    <script>
+        var 꺼낸거 = localStorage.getItem('cart');
+        꺼낸거 = JSON.parse(꺼낸거);
+        
+    </script>
+</html>
