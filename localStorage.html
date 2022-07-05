@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="/detail.css" rel="stylesheet">
+    <title>Hello, world!</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      
+    <div class="container">
+      <div class="row">
+    
+          <!-- <div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>Card title</h5>
+            <p>가격 : 70000</p>
+          </div>
+        -->
+      </div>
+    </div> 
+
+
+  </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="/tab.js"></script>
+
+    <!-- 삼풍명 다나가순 -->
+    <div class="container">
+      <button class="btn btn-danger idTitle">삼풍명다나가순</button>
+    </div>  
+
+    <script>
+
+      $('.idTitle').click(function(){
+        products.sort(function(a,b){
+          if(a.title < b.title){
+            return 1
+          }
+          else{
+            return -1
+          }
+          
+        });
+        //같은 글자면 0을 리턴
+
+        $('.row').html('');
+
+        //반복문 
+          products.forEach(function(a){
+
+            var 템플릿 = 
+            `   <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${a.title}</h5>
+                <p>가격 : ${a.price}</p>
+              </div>`;
+            $('.row').append(템플릿); 
+
+            });
+
+
+             });
+              
+    </script>
+    <!-- // -->
+
+    <!-- 6만원 이하 상품만보기 -->
+
+    <div class="container">
+      <button class="btn btn-danger descending">6만원 이하</button>
+    </div>  
+
+    <script>
+      $('.descending').click(function(){
+       var 가격변동 = products.filter(function(a,b){
+          return a.price <= 60000
+        });
+        console.log(가격변동)
+
+
+        $('.row').html('');
+
+        //반복문 
+        가격변동.forEach(function(a){
+
+            var 템플릿 = 
+            `   <div class="col-sm-4">
+                <img src="https://via.placeholder.com/600" class="w-100">
+                <h5>${a.title}</h5>
+                <p>가격 : ${a.price}</p>
+              </div>`;
+            $('.row').append(템플릿); 
+
+            });
+
+
+      });
+    </script>
+    <!-- // -->
+
+
+  <!-- 버튼 누르면 데이터 가격순 정렬 -->
+    <div class="container">
+      <button class="btn btn-danger sell">가격순 정렬</button>
+    </div>  
+
+
+
+    <script>
+
+    var products = [
+        { id : 0, price : 70000, title : 'Blossom Dress' },
+        { id : 1, price : 50000, title : 'Springfield Shirt' },
+        { id : 2, price : 60000, title : 'Black Monastery' }
+      ];
+
+      
+      $('.sell').click(function(){
+
+        products.sort(function(a,b){
+          return a.price - b.price;
+        });
+
+        $('.row').html('');
+
+      //반복문 
+        products.forEach(function(a){
+
+          var 템플릿 = 
+          `   <div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+            </div>`;
+          $('.row').append(템플릿); 
+
+          });
+      
+      });
+      
+
+      //Array 안에 Object
+      // console.log(products[0].title);
+
+      // document.querySelectorAll('.name')[0].innerHTML = products[0].title
+      
+      // for(let i = 0; i < 3; i++){
+      //   document.querySelectorAll('.name')[i].innerHTML = products[i].title;
+      //   document.querySelectorAll('.price')[i].innerHTML = products[i].price;
+        
+      // }
+
+      
+      //   var 템플릿 = 
+      //   `   <div class="col-sm-4">
+      //       <img src="https://via.placeholder.com/600" class="w-100">
+      //       <h5>${products[0].title}</h5>
+      //       <p>가격 : ${products[0].price}</p>
+      //     </div>
+      //  `
+      //  document.querySelectorAll('.row')[0].append(템플릿);
+      // $('.row').append(템플릿);
+      
+
+        // 장바구니 기능
+        // 브라우저 안에 몰래 데이터 저장가능 
+        // 로컬스트리지 저장
+        localStorage.setItem('이름', 'kim')
+        localStorage.getItem('이름');
+
+
+
+        // 카드 
+      products.forEach(function(a){
+
+        var 템플릿 = 
+        `   <div class="col-sm-4">
+            <img src="https://via.placeholder.com/600" class="w-100">
+            <h5>${a.title}</h5>
+            <p>가격 : ${a.price}</p>
+            <button class="buy"> 구매 </button>
+          </div>`;
+        $('.row').append(템플릿); 
+
+        });
+
+
+
+
+      // sort()는 원본 변형 o
+      // filter()는 원본 변형 x
+      // map() array 자료 전부 변형
+      var 어레이 = [7,3,5,2,40];
+
+      //자료 원하는것만 필터하려면
+      // filter() 결과는 변수에 저장해서 써야함
+    
+      var 새어레이 = 어레이.filter(function(a){
+        // return 조건식
+        return a < 4
+      });
+      console.log(새어레이);
+
+      // map
+      var 새어레이 = 어레이.map(function(a){
+        // return 조건식
+        return a * 10;
+      });
+      console.log(새어레이);
+
+    
+      //문자정렬
+      // 어레이.sort();
+      // console.log(어레이);
+
+      //숫자 오름차순 정렬
+      어레이.sort(function(a,b){
+        return a - b;
+      });
+
+      //a,b 는  array 안의 자료이다.
+      //return 오른쪽이 양수면 a를 오른쪽으로
+      //return 오른쪽이 음수면 b를 오른쪽으로
+
+      //다나가순 정렬은?
+      var 어레이2 = ['a','c','b'];
+      어레이2.sort(function(c, d){
+        if (c < d) {
+          return 1
+        }
+
+        else {
+          return -1
+        }
+        
+      });
+
+      console.log(어레이2);
+
+
+
+
+
+    </script> 
+
+
+
+
+
+
+
+
+
+<!-- 더보기 -->
+  <div class="container">
+  <button class="btn btn-danger click">더보기</button>
+  </div>  
+
+  <script>
+
+    
+    //더보기
+    $('.click').click(function(){
+      $.get('https://codingapple1.github.io/js/more1.json')
+      .done(function(data){
+        console.log(data);
+        
+  
+        // ` <div class="col-sm-4">
+        //     <img src="https://via.placeholder.com/600" class="w-100">
+        //     <h5>${data[0].title}</h5>
+        //     <p>가격 : ${data[0].price}</p>
+        //   </div>`;
+        
+        data.forEach(function(a){
+          var 템플릿 = 
+          `   <div class="col-sm-4">
+              <img src="https://via.placeholder.com/600" class="w-100">
+              <h5>${a.title}</h5>
+              <p>가격 : ${a.price}</p>
+              
+            </div>`;
+          $('.row').append(템플릿); 
+
+          });
+
+
+      });
+
+    });
+
+
+
+  </script>
+<!-- //더보기 -->
