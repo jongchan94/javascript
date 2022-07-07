@@ -53,10 +53,19 @@
             // a = -1/500;
             // b = 115/50;
 
+            // 크기
+            // var z = a * 높이 + b;
+            var z = (-1/5000) * 높이 + 565/500;
+            // z = a * 높이 + b;
+
+            // a = 1
+            // b = 0.9
+
+            // 
         
 
             $('.card-box').eq(0).css('opacity',y);
-            $('.card-box').eq(0).css('transform', y);
+            $('.card-box').eq(0).css('transform', `scale( ${z}`);
             // $('.card-box').eq(0).css('transform', 'scaleX(0.9)', y);
         });
 
