@@ -199,13 +199,22 @@
           // 이동거리가 100이상
           if(e.clientX - 시작좌표 < -100){
             // console.log()
-             $('.slide-container').eq(0).css('transform', `translateX(-100vw)`)
+             $('.slide-container').eq(0).
+             css('transition', 'all 0.5s').
+             css('transform', `translateX(-100vw)`)
             
           }
           else{
-            $('.slide-container').eq(0).css('transform', `translateX(0vw)`)
+            $('.slide-container').eq(0).
+            css('transition', 'all 0.5s').
+            css('transform', `translateX(0vw)`)
           }
-          
+
+          //transition 계속 넣어두면 이상해짐 0.5초 동안 움직여서 좀 느려짐
+
+          //transition 이동이 끝나면 제거
+
+          $('.slide-container').eq(0).css('transition', 'none');
         });
 
 
