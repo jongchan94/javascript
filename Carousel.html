@@ -39,7 +39,7 @@
       <div style="overflow: hidden;">
         <div class="slide-container">
             <div class="slide-box">
-                <img src="/img/car1.png">
+                <img src="/img/car1.png" draggable="false">
             </div>
             <div class="slide-box">
                 <img src="/img/car2.png">
@@ -58,9 +58,15 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script>
+   
+   
+   
+   
+   
+   <!-- 버튼 누르면 슬라이드 되는 캐러셀 슬라이드 -->
+   <script>
         
-      
+
         // document.querySelectorAll('.slide-2')[0].addEventListener('click', function(){
         //     document.querySelectorAll('.slide-container')[0].style.transform = 'translateX(-100vw)';
         // });
@@ -137,6 +143,53 @@
           $('.slide-container').css('transform', 'translateX(0vw)');
           }
         });
+
+// -----//
+
+
+// 이미지를 누르고 넘기면 움직이는 슬라이드
+        var 시작좌표 = 0;
+
+       // 마우스 찍은 후에 박스 움직이게 하려고 변수 저장
+        var 눌렀냐 = false;
+
+        // 클릭시 움직이는 슬라이드
+        //마우스를 누를 때
+        $('.slide-box').eq(0).on('mousedown', function(e){
+         시작좌표 = e.clientX
+          //e.clientX - 현재 마우스위치 X좌표
+          // console.log(e.clientX);
+
+          //시작 좌표와 끝나는 좌표를 뺀다
+          
+          눌렀냐 = true
+
+        });
+
+        $('.slide-box').eq(0).on('mousemove', function(e){
+          // 이동거리
+            // console.log(시작좌표 - e.clientX);
+            // 왼쪽 음수 오른쪽 양수
+            // console.log(e.clientX - 시작좌표);
+            // $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`)
+            //100px를 변수 넣고싶을 때 백틱활용 
+            //e.clientX - 시작좌표 만큼 움직여 주세요~
+
+            if(눌렀냐 == true){
+              $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`)
+            }
+        });
+
+
+
+        $('.slide-box').eq(0).on('mouseup', function(e){
+          눌렀냐 = false;
+        });
+
+
     </script>
+
+
+
   </body>
 </html>
