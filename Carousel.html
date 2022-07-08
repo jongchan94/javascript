@@ -184,6 +184,28 @@
 
         $('.slide-box').eq(0).on('mouseup', function(e){
           눌렀냐 = false;
+
+           
+          // 시작좌표가  100px 이동했으면 둘째사진보임 
+          // 아니면 첫쨰사진보임
+
+          
+          // if(시작좌표 < 100){
+          //   // console.log()
+          //    $('.slide-box').eq(1).css('transform', `translateX(${시작좌표}px`)
+            
+          // }
+
+          // 이동거리가 100이상
+          if(e.clientX - 시작좌표 < -100){
+            // console.log()
+             $('.slide-container').eq(0).css('transform', `translateX(-100vw)`)
+            
+          }
+          else{
+            $('.slide-container').eq(0).css('transform', `translateX(0vw)`)
+          }
+          
         });
 
 
