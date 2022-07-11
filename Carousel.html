@@ -215,20 +215,81 @@
           //transition 이동이 끝나면 제거
 
           $('.slide-container').eq(0).css('transition', 'none');
+          
+        });
+      
+
+ 
+
 
           //모바일에선 마우스가 아니라 터치라 터치이벤트로해야함
 
-          //e.toyches[0]
+          //e.touches[0]
           //몇번 째 터치하는걸 알아야하기 때문에
 
           //touchstart
           //touchmove
           //touchhend
+
+      
+
+        $('.slide-box').eq(0).on('touchstart', function(e){
+         시작좌표 = e.touches[0].clientX
+
+          
+          눌렀냐 = true
+
+        });
+
+
+        $('.slide-box').eq(0).on('touchmove', function(e){
+          
+          // console.log(시작좌표 - e.touches[0])
+
+          if(눌렀냐 == true){
+            
+            $('slide-container').css('transform', `translateX(${시작좌표 -e.touches[0]}px)`)
+          }
+          
+        
+
         });
 
 
 
-        
+
+        $('.slide-box').eq(0).on('mouseup', function(e){
+          눌렀냐 = false;
+
+           
+          // 시작좌표가  100px 이동했으면 둘째사진보임 
+          // 아니면 첫쨰사진보임
+
+          if(e.changedTouches[0] - 시작좌표 < -100){
+             $('.slide-container').eq(0).
+             css('transition', 'all 0.5s').
+             css('transform', `translateX(-100vw)`)
+          }
+
+
+
+
+          // 이동거리가 100이상
+          // if(e.clientX - 시작좌표 < -100){
+          //   // console.log()
+          //    $('.slide-container').eq(0).
+          //    css('transition', 'all 0.5s').
+          //    css('transform', `translateX(-100vw)`)
+            
+          // }
+          // else{
+          //   $('.slide-container').eq(0).
+          //   css('transition', 'all 0.5s').
+          //   css('transform', `translateX(0vw)`)
+          // }
+          // $('.slide-container').eq(0).css('transition', 'none');
+          
+        });
 
     </script>
 
