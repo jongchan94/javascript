@@ -7,11 +7,13 @@
     <title>Document</title>
 </head>
 <body>
+
+<div id="quiz">
     <h4>물에 빠지면 누구먼저 구할 것인가 ?</h4>
     <button>와이프</button>
     <button>부모님</button>
     <button>키우던 개</button>
-
+</div>
 </body>
 
 <script>
@@ -25,11 +27,46 @@
         //변수가 case 3이랑 같다면 alert 실행해주세요
         break;
         //스위치문 실행을 중지해주세요
+        //break는 탈출 , 없으면 다 실행해줌
 
         case 4:
         alert('변수가 4이네요')
         break;
+
+        //위에 아무것도 해당 안될 때 쓰는 문법 else 와 비슷
+        default:
+            alert('아무것도 해당안됌')
     }
+
+
+//if와 switc 차이
+//if는 다양한 조건식 가능
+//switch는 변수 1개만 테스트 가능 ( 등호 비교 ===)     , 대신 깔끔해보임 , 변수 하나만 검사할 때 간편하게 사용가능
+
+
+    document.querySelector('#quiz').addEventListener('click', function(e){
+
+        //내가 누른 버튼 안에 있던 글자
+        // alert(e.target.innerHTML);
+
+        switch (e.target.innerHTML) {
+            case '와이프':
+            alert('와이프를 사랑하시네요');
+            break;
+
+            case '부모님':
+            alert('효자시네요');
+            break;
+
+            case '키우던 개':
+            alert('개를 더 좋아하시네요');
+            break;
+           }
+    });
+
+
+
+
 
 </script>
 
