@@ -84,3 +84,15 @@ button {
 }
 
 
+/* //search */
+
+.search_form{
+  display: flex;
+}
+
+.search_form input[type="search"]{
+    flex: 1;
+    margin-top: 15px;
+    margin-left: 30px;
+
+}
