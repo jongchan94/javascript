@@ -1,43 +1,86 @@
-ul.list {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #ccc;
+html {
+	font-family: 'Apple SD Gothic Neo', Roboto, 'Noto Sans KR', NanumGothic, 'Malgun Gothic', sans-serif;
+	color: #555;
+	line-height: 1.2;
+	word-wrap: break-word;
 }
-ul.list::after {
-  content: '';
-  display: block;
-  clear: both;
+body {
+	background: #eee;
+	-webkit-font-smoothing: antialiased;
 }
-.tab-button {
-  display: block;
-  padding: 10px 20px 10px 20px;
-  float: left;
-  margin-right: -1px;
-  margin-bottom: -1px;
-  color: grey;
-  text-decoration: none;
-  cursor: pointer;
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
 }
-.orange {
-  border-top: 2px solid orange;
-  border-right: 1px solid #ccc;
-  border-bottom: 1px solid white;
-  border-left: 1px solid #ccc;
-  color: black;
-  margin-top: -2px;
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-.tab-content {
-  display: none;
-  padding: 10px;
+div, span, article, section, header, footer, aside, p, ul, li, fieldset, legend, label, a, nav, form {
+	box-sizing: border-box;
+	/* content-box */
+}
+ol, ul, li {
+	list-style: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+	border: 0;
+}
+a {
+	display: inline-block;
+}
+button {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
 }
 
 
-.size{
-  display: none;
+/* header */
+
+.header{
+  width: 100%;
+  height: 50px;
+  background-color: black;
 }
 
-.show{
-  display: block;
+.header h1{
+  font-size: 20px;
+  padding: 15px;
+  width: 25%;
+  color: white;
 }
+.menu{
+  display: flex;
+  flex-direction:row;
+
+}
+
+.menu p{
+  display: flex;
+  width: 25%;
+  height: 50px;
+  font-size: 13px;
+  padding: 15px;
+  color: white;
+}
+
 
