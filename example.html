@@ -55,6 +55,9 @@
       
 
 
+      // 카드
+
+
 
       const 템플릿 = `
         <div class="col-sm-4">
@@ -66,6 +69,15 @@
         </div>
       `
       $('.row').append(템플릿);
+      
+      ;
+
         
+      $.get('img/store.json')
+          .done(function(data){
+
+            console.log(data);
+
+          });
 
     </script>
