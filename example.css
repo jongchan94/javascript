@@ -96,3 +96,9 @@ button {
     margin-left: 30px;
 
 }
+
+
+.close{
+	background-color: black;
+	color: white;
+}
