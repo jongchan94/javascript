@@ -58,26 +58,48 @@
       // 카드
 
 
-
-      const 템플릿 = `
-        <div class="col-sm-4">
-            <img src="/img/pr1.JPG" class="w-100">
-            <h5>식기세척기</h5>
-            <p>세척나라</p>
-            <p>가격 : 70000</p>
-            <button class="close">닫기</button>
-        </div>
-      `
-      $('.row').append(템플릿);
-      
+      // const 템플릿 = `
+      //   <div class="col-sm-4">
+      //       <img src="/img/pr1.JPG" class="w-100">
+      //       <h5>식기세척기</h5>
+      //       <p>세척나라</p>
+      //       <p>가격 : 70000</p>
+      //       <button class="close">닫기</button>
+      //   </div>
+      // `
+      // $('.row').append(템플릿);
       ;
+      
 
-        
+      //원본 변수 저장
+      let products = [];
+    
       $.get('img/store.json')
           .done(function(data){
-
+            //데이터 확인
             console.log(data);
 
+
+            products = data.products;
+
+            data.products.forEach(function(a,){
+
+              const 템플릿 = `
+             <div class="col-sm-4">
+                <img src= "${a.photo}" class"w-100">
+                <h5>${a.title}</h5>
+                <p>${a.brand}</p>
+                <p>가격 :${a.price}</p>
+                
+                <button class="close">닫기</button>
+             </div>
+          `
+            $('.row').append(템플릿);
+
+            });
+
+
           });
+
 
     </script>
