@@ -88,13 +88,13 @@ button {
 
 .search_form{
   display: flex;
+  width: 100%;
 }
 
 .search_form input[type="search"]{
     flex: 1;
     margin-top: 15px;
     margin-left: 30px;
-
 }
 
 
@@ -104,5 +104,6 @@ button {
 }
 
 .row{
-	margin-top: 15px;
+	margin-top: 10px;
+	margin-left: 20px;
 }
